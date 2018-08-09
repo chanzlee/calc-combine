@@ -1,29 +1,41 @@
-$(document).ready(function(){
-  $("form#triangle").submit(function(event){
+
+$(document).ready(function() {
+  $("form#calculator").submit(function(event){
     event.preventDefault();
-
-
-    var one =  parseFloat($("input#side1").val());
-    var two =  parseFloat($("input#side2").val());
-    var three =  parseFloat($("input#side3").val());
-
-    if ( isNaN(one) || isNaN(two) || isNaN(three)  ) {
-    alert("Enter valid input")
-    } else if ( one + two <= three || two + three <= one || one + three <=  two ){
-    alert("Not a Triangle");
-    } else if ( one === two && two === three && one === three) {
-    alert("Equilateral");
-    } else if ( one === two || two === three || three === one) {
-    alert("Isosceles");
-    } else if ( one !== two && two !== three && one !== three ) {
-    alert("Scalene");
+    var number1 = parseInt($("#input1").val());
+    var number2 = parseInt($("#input2").val());
+    var operator = $("input:radio[name=operator]:checked").val();
+    var result;
+    if (operator === "add") {
+      result = add(number1, number2);
+    } else if (operator === "subtract") {
+      result = subtract(number1, number2);
+    } else if (operator === "multiply") {
+      result = multiply(number1, number2);
+    } else if (operator === "divide") {
+      result = divide(number1, number2);
     } else {
-      alert("Not a Number");
+      alert("Select an operator")
     }
 
-    });
 
-
-
-
+    $("#output").text(result);
   });
+
+});
+
+var add = function(number1, number2) {
+  return number1 + number2;
+};
+
+var multiply = function(number1, number2) {
+  return number1 * number2;
+};
+
+var subtract = function(number1, number2) {
+  return number1 - number2;
+};
+
+var divide = function(number1, number2) {
+  return number1 / number2;
+};

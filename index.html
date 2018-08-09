@@ -6,39 +6,50 @@
     <script src="js/jquery-3.3.1.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/scripts.js"></script>
-    <title>Triangle Tracker</title>
+    <title>Calculator</title>
   </head>
 
   <body>
     <div class="container">
-      <h1>Triangle Tracker</h1>
-      <p>You want to know what kind of triangle you have?</p>
-
-      <form id="triangle">
+      <h1>Calculator</h1>
+      <form id="calculator">
         <div class="form-group">
-          <label for="side1">type length of one side:</label>
-          <input id="side1" class="form-control" type="text">
+          <label for="input1">1st number:</label>
+          <input id="input1" class="form-control" type="text">
         </div>
         <div class="form-group">
-          <label for="side2">type length of another side:</label>
-          <input id="side2" class="form-control" type="text">
+          <label for="input2">2nd number:</label>
+          <input id="input2" class="form-control" type="text">
         </div>
-        <div class="form-group">
-          <label for="side3">type length of the other side:</label>
-          <input id="side3" class="form-control" type="text">
+        <div class="radio">
+          <label>
+            <input type="radio" name="operator" value="add" checked>
+            add
+          </label>
         </div>
-
-        <button id="choose" class="btn" type="submit">Submit</button>
+        <div class="radio">
+          <label>
+            <input type="radio" name="operator" value="subtract">
+            subtract
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="operator" value="multiply">
+            multiply
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="operator" value="divide">
+            divide
+          </label>
+        </div>
+        <button type="submit" class="btn">Go!</button>
       </form>
+      <div id="output">
 
-
+      </div>
     </div>
-
-
-
-    <div class="output">
-
-    </div>
-
   </body>
 </html>
